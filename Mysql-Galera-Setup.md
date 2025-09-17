@@ -14,13 +14,15 @@ Use hostname in cluster config instead of ips
 Use hosts file if you don't have local dns setup.
 
 Hostnames: 
+```
+mysql-node01 192.168.1.151
 
-mysql-nod01 192.168.1.151
 mysql-node02 192.168.1.152
+
 mysql-node03 192.168.1.153
 
 Check below one on all 3 nodes
-
+```
 # sestatus
 ```
 SELinux status:                 disabled
@@ -100,7 +102,7 @@ innodb_autoinc_lock_mode=2
 # Allow server to accept connections on all interfaces.
 #
 bind-address=0.0.0.0
-wsrep_cluster_name="my33x-cluster"
+wsrep_cluster_name="myown-cluster"
 wsrep_sst_method=rsync
 #wsrep_node_address= "10.12.0.134"
 wsrep_node_name="mysql-master01"
@@ -233,3 +235,4 @@ safe_to_bootstrap: 0
 Add New node to cluster : 
 
 Bring up the new node with ip and all other config need to be copied to new server once that is done restart the mysqld on each node.
+#more steps to be added
